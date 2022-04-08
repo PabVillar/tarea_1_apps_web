@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ActívateApp</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1>¡Agrega tu actividad!</h1>
+        </div>
+        <div class="form" action="#" onsubmit="return validarFormulario()">
+            <form action="">
+                <fieldset>
+                    <legend>¿Dónde?</legend>
+                    <label for="region">Región:</label>
+                    <select name="region" id="region" required>
+                        <option value="0">---SELECCIONAR REGIÓN---</option>
+                        <option value="REGIÓN METROPOLITANA DE SANTIAGO">REGIÓN METROPOLITANA DE SANTIAGO</option>
+                        <option value="REGIÓN DE ARICA Y PARINACOTA">REGIÓN DE ARICA Y PARINACOTA</option>
+                        <option value="REGIÓN DE TARAPACÁ">REGIÓN DE TARAPACÁ</option>
+                        <option value="REGIÓN DE ANTOFAGASTA">REGIÓN DE ANTOFAGASTA</option>
+                        <option value="REGIÓN DE ATACAMA">REGIÓN DE ATACAMA</option>
+                        <option value="REGIÓN DE COQUIMBO">REGIÓN DE COQUIMBO</option>
+                        <option value="REGIÓN DE VALPARAÍSO">REGIÓN DE VALPARAÍSO</option>
+                        <option value="REGIÓN DEL LIBERTADOR GENERAL BERNARDO O'HIGGINS">REGIÓN DEL LIBERTADOR GENERAL BERNARDO O'HIGGINS</option>
+                        <option value="REGIÓN DEL MAULE">REGIÓN DEL MAULE</option>
+                        <option value="REGIÓN DE ÑUBLE">REGIÓN DE ÑUBLE</option>
+                        <option value="REGIÓN DEL BIOBÍO">REGIÓN DEL BIOBÍO</option>
+                        <option value="REGIÓN DE LA ARAUCANÍA">REGIÓN DE LA ARAUCANÍA</option>
+                        <option value="REGIÓN DE LOS RÍOS">REGIÓN DE LOS RÍOS</option>
+                        <option value="REGIÓN DE LOS LAGOS">REGIÓN DE LOS LAGOS</option>
+                        <option value="REGIÓN DE AYSÉN DEL GENERAL CARLOS IBÁÑEZ DEL CAMPO">REGIÓN DE AYSÉN DEL GENERAL CARLOS IBÁÑEZ DEL CAMPO</option>
+                        <option value="REGIÓN DE MAGALLANES Y DE LA ANTÁRTICA CHILENA">REGIÓN DE MAGALLANES Y DE LA ANTÁRTICA CHILENA</option>
+                    </select><br>
+                    <label for="comunas">Comuna:</label>
+                    <select name="comunas" id="comunas" required>
+                        <option value="0">---SELECCIONAR COMUNA---</option>
+                    </select><br>
+                    <label for="sector">Sector:</label>
+                    <input name="sector" id="sector" type="text" size="100" maxlength="100"><br>
+                </fieldset>
+                <br>
+                <fieldset>
+                    <legend>¿Quién organiza?</legend>
+                    <label for="nombre">Nombre:</label>
+                    <input name="nombre" id="nombre" type="text" size="100" maxlength="200" required><br>
+                    <label for="email">Correo electrónico</label>
+                    <input type="email" name="email" id="email" size="100" required><br>
+                    <label for="celular">Número de celular:</label>
+                    <input type="tel" name="celular" id="celular" size="15"><br>
+                    <label for="contactar-por">Contactar por:</label><br>
+                    <input type="checkbox" name="contactar-por" id="whatsapp" value="whatsapp" onclick="agregarWsp()">
+                    <label for="whatsapp">Whatsapp</label><br>
+                    <div id="contenedorwsp"></div>
+                    <input type="checkbox" name="contactar-por" id="telegram" value="telegram" onclick="agregarTg()">
+                    <label for="telegram">Telegram</label><br>
+                    <div id="contenedortg"></div>
+                    <input type="checkbox" name="contactar-por" id="twitter" value="twitter" onclick="agregarTw()">
+                    <label for="twitter">Twitter</label><br>
+                    <div id="contenedortw"></div>
+                    <input type="checkbox" name="contactar-por" id="instagram" value="instagram" onclick="agregarIg()">
+                    <label for="instagram">Instagram</label><br>
+                    <div id="contenedorig"></div>
+                    <input type="checkbox" name="contactar-por" id="facebook" value="facebook" onclick="agregarFb()">
+                    <label for="facebook">Facebook</label><br>
+                    <div id="contenedorfb"></div>
+                    <input type="checkbox" name="contactar-por" id="tiktok" value="tiktok" onclick="agregarTk()">
+                    <label for="tiktok">TikTok</label><br>
+                    <div id="contenedortk"></div>
+                    <input type="checkbox" name="contactar-por" id="otro" value="otro" onclick="agregarOtro()">
+                    <label for="otro">Otro</label>
+                    <div id="contenedorotro"></div>
+                </fieldset>
+                <br>
+                <fieldset>
+                    <legend>¿Cuándo y de qué se trata?</legend>
+                    <label for="dia-hora-inicio">Día y hora de inicio: </label>
+                    <input type="datetime-local" name="dia-hora-inicio" id="dia-hora-inicio" required><br>
+                    <label for="dia-hora-termino">Día y hora de término: </label>
+                    <input type="datetime-local" name="dia-hora-termino" id="dia-hora-termino"><br>
+                    <label for="descripcion-evento">Descripción del evento:</label><br>
+                    <textarea name="descripcion-evento" id="descripcion-evento" cols="50" rows="10"></textarea><br>
+                    <label for="tema">Tema del evento: </label>
+                    <select name="tema" id="tema" required multiple>
+                        <option value="0">---SELECCIONAR TEMA---</option>
+                        <option value="musica">Música</option>
+                        <option value="deporte">Deportes</option>
+                        <option value="ciencias">Ciencias</option>
+                        <option value="religion">Religion</option>
+                        <option value="politica">Política</option>
+                        <option value="tecnologia">Tecnología</option>
+                        <option value="juegos">Juegos</option>
+                        <option value="baile">Baile</option>
+                        <option value="comida">Comida</option>
+                        <option value="otro">Otro</option>
+                    </select><br>
+                    <label for="foto-actividad">Foto de la actividad: </label>
+                    <input type="file" name="foto-actividad" id="foto-actividad" required multiple><br>
+                </fieldset><br>
+                <button type="submit" class="btn btn-primary">Ingresar actividad</button><br>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

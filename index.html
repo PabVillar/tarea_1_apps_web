@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ActívateApp</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1>ActívateApp</h1>
+        </div>
+        <div class="col">
+            <button type="button" class="btn btn-primary btn-lg" onclick="location.href='agregar-actividad.html'">Agregar actividad</button><br>
+            <br>
+            <button type="button" class="btn btn-primary btn-lg" onclick="location.href='listado-actividades.html'">Listado de actividades</button><br>
+            <br>
+            <button type="button" class="btn btn-primary btn-lg" onclick="location.href='estadisticas.html'">Estadísticas</button>
+        </div>
+        <div class="col">
+            <h2>Últimas actividades</h2><br>
+            <table>
+                <tr>
+                    <th>Inicio</th>
+                    <th>Término</th>
+                    <th>Comuna</th>
+                    <th>Sector</th>
+                    <th>Tema</th>
+                    <th>Foto</th>
+                </tr>
+                <tr>
+                    <th>2022-04-16 11:00</th>
+                    <th>2022-04-16 15:30</th>
+                    <th>Santiago</th>
+                    <th>Barrio Universitario</th>
+                    <th>Ciclo de anime</th>
+                    <th><img src="img/ciclo-anime.jpg" alt="" height="240" width="320"></th>
+                </tr>
+                <tr>
+                    <th>2022-04-17 10:00</th>
+                    <th>2022-04-17 13:00</th>
+                    <th>Vitacura</th>
+                    <th>Parque Bicentenario</th>
+                    <th>Two Way Pet Zoo</th>
+                    <th><img src="img/twpz.jpg" alt="" height="240" width="320"></th>
+                </tr>
+                <tr>
+                    <th>2022-04-16 19:00</th>
+                    <th>2022-04-16 21:00</th>
+                    <th>Providencia</th>
+                    <th>Plaza de la aviación</th>
+                    <th>Jazz al aire libre</th>
+                    <th><img src="img/jazz.jpeg" alt="" height="240" width="320"></th>
+                </tr>
+                <tr>
+                    <th>2022-04-23 11:00</th>
+                    <th>2022-04-23 17:30</th>
+                    <th>Ñuñoa</th>
+                    <th>Plaza Ñuñoa</th>
+                    <th>Feria del libro usado</th>
+                    <th><img src="img/libro-usado.jpg" alt="" height="240" width="320"></th>
+                </tr>
+                <tr>
+                    <th>2022-04-24 16:00</th>
+                    <th>2022-04-24 19:00</th>
+                    <th>Santiago</th>
+                    <th>Barrio Lastarria</th>
+                    <th>Teatro callejero</th>
+                    <th><img src="img/lapatrioca.jpg" alt="" height="240" width="320"></th>
+                </tr>
+            </table><br>
+        </div>
+    </div>
+</body>
+</html>
